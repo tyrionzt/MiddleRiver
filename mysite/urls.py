@@ -21,5 +21,5 @@ urlpatterns = [
 
     url(r'', include('index.urls')),
 
-    url(r'^resume/$', include('resume.urls'))
+    url(r'resume/', include('resume.urls'))
 ]

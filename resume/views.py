@@ -9,4 +9,4 @@ def my_resume(request):
     return render(request, 'resume.html')
 
 def download_resuem(request):
-    return HttpResponse("敬请期待~")
+    return HttpResponse("404")
