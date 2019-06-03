@@ -18,7 +18,10 @@ from views import *
 
 urlpatterns = [
 
-    url(r'', my_resume),
+    url(r'^$', my_resume),
 
-    url(r'^download/$', download_resuem)
+    url(r'^download/$', download_resuem),
+
+    url(r'^save_message/$', save_message),
+
 ]

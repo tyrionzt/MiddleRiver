@@ -68,7 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<li><a class="scroll" href="#about">关于</a></li>
 								<li><a class="scroll" href="#skills">技能</a></li>
 								<li><a class="scroll" href="#portfolio">日常</a></li>
-								<li><a class="scroll" href="#contact">联系</a></li>
+								<li><a class="scroll" href="#contact">留言</a></li>
 							</ul>
 
 						</div>
@@ -146,7 +146,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</ul>
 					<div class="clearfix"></div>
 					<div class="pos-w3ls">
-						<h4><span class="red-w3ls"></span> 联系我</h4>
+{#						<h4><span class="red-w3ls"></span> 留言板</h4>#}
 						<div class="button-w3layouts"><a href="#contact" class="scroll">联系我</a></div>
 					</div>
 				</div>
@@ -488,17 +488,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="wthree-form">
 			<div class="container">
 				<div class="col-md-6 contact-form agile_inner_grids">
-					<h5 class="title-w3">Say Hello</h5>
-					<form action="#" method="post">
+					<h5 class="title-w3">到此一游--留点什么</h5>
+					<form action="/resume/save_message/" method="post">
+                        {% csrf_token %}
 						<div class="fields-grid">
 							<div class="styled-input">
 								<input type="text" name="Full Name" placeholder="姓名" required="">
 							</div>
 							<div class="styled-input">
-								<input type="email" name="Email" placeholder="微信" required="">
+								<input type="text" name="Wechat" placeholder="微信" required="">
 							</div>
 							<div class="styled-input">
-								<input type="text" name="Subject" placeholder="主题" required="">
+								<input type="number" name="QQ" placeholder="qq" required="">
+							</div>
+                            <div class="styled-input">
+								<input type="email" name="Email" placeholder="邮箱" required="">
+							</div>
+                            <div class="styled-input">
+								<input type="number" name="Phone Num" placeholder="电话号码" required="">
 							</div>
 							<div class="clearfix"> </div>
 						</div>
@@ -508,14 +515,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<input type="submit" value="发送">
 					</form>
 				</div>
-				<div class="col-md-6 map-w3-agileits">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2477.523147399147!2d-0.18136368416846532!3d51.61362537965271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487619e5c86f6147%3A0x7f009116a7f24760!2sNether+Street+Apartment!5e0!3m2!1sen!2sin!4v1501221607097"></iframe>
-				</div>
+
+                <table class="table table-striped table-bordered table-hover table-condensed">
+            <thead>
+                <tr class="danger">
+                    <th>留言时间</th>
+                    <th>留言者</th>
+                    <th>内容</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if all_message %}
+                    {% for message in all_message %}
+                        <tr class="{% cycle 'active' 'success' 'warning' 'info' %}">
+                            <td>{{ message.date|date:'Y-m-d H:i:s' }}</td>
+                            <td>{{ message.name }}</td>
+                            <td>{{ message.contents }}</td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="4">无数据</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+
 				<div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
-    <a href="/resume/download/">Download CV</a>
+    <a href="download/">
+                                        <button class="btn bg-danger">下载简历</button>
+                                      </a>
 	<!-- //contact -->
 	<!-- Footer -->
 	<div class="copyright-wthree">
