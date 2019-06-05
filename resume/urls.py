@@ -24,4 +24,8 @@ urlpatterns = [
 
     url(r'^save_message/$', save_message),
 
+    url(r'^qq/$', qq),
+
+    url(r'^wechat/$', wechat),
+
 ]

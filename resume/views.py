@@ -54,16 +54,12 @@ def save_message(request):
 
     return HttpResponseRedirect('/resume/')
 
-# def show_message(request):
-#     #从数据库中取数据
-#     all_message = Message().objects.all().order_by('-AddTime')
-#     try:
-#         page = request.GET.get('page', 1)
-#     except :
-#         page = 1
-#     p = Paginator(all_message, 3, request=request)
-#     message = p.page(page)
-#     return render(request, 'resume.html', {'all message': message})
+def qq(request):
+    return render(request, 'qq.html')
+
+def wechat(request):
+    return render(request, 'wechat.html')
+
 
 
 
