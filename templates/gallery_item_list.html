@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}相册列表{% endblock %}
+
+{% block content %}
+
+<p><a href="{% url 'index' %}">&laquo; 返回首页</a></p>
+
+<h2>相册列表</h2>
+{% if object_list %}
+<table>
+    <tr>
+        <th>标题</th>
+        <th>缩略图</th>
+        <th>描述</th>
+    </tr>
+    {% for item in object_list %}
+    <tr>
+        <td><i>{{ item.name }}</i></td>
+        <td>
+            {% if item.photo_set.count %}
+            <a href="{{ item.get_absolute_url }}">
+                <img src="{{ item.photo_set.all.0.image.thumb_url }}" />
+            </a>
+            {% else %}
+            (No photos currently uploaded)
+            {% endif %}
+        </td>
+        <td>{{ item.description }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>There are currently no items to display.</p>
+{% endif %}
+
+{% endblock %}

@@ -1,3 +1,4 @@
+#! coding: utf-8
 """mysite URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -15,7 +16,8 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-
+from django.conf.urls.static import static
+from django.conf import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
@@ -28,4 +30,9 @@ urlpatterns = [
     url(r'^moive/', include('moive.urls')),
 
     url(r'^book/', include('book.urls')),
-]
+
+    # url(r'^media/(?P<path>.*)$', views.static.serve, {'document_root':settings.MEDIA_ROOT}),
+
+    url(r'^gallery/', include('gallery.urls')),
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

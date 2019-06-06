@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'memo',
     'moive',
     'book',
+    'gallery'
 ]
 
 MIDDLEWARE = [
@@ -133,3 +134,5 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'index_static'),
 )
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
