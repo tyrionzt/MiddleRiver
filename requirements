@@ -1,0 +1,5 @@
+cryptography==2.7
+Django==1.11.20
+mysql-python==1.2.3
+Pillow==6.0.0
+pycparser==2.19
