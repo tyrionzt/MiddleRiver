@@ -7,4 +7,4 @@ from .models import Memo
 
 def index(request):
     memos = Memo.objects.all()
-    return render(request, 'memo.html', {'memos': memos})
+    return render(request, 'memo/memo.html', {'memos': memos})

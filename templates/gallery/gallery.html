@@ -1,0 +1,27 @@
+{% extends "gallery/base.html" %}
+
+{% block title %}相册{% endblock %}
+
+{% block content %}
+
+<p>欢迎来到我的相册，在这里你可以看到一幅幅不同的图片，点击下方的“查看所有图片”链接可以看到所有的图片.</p>
+
+<h3>陈列柜</h3>
+<table>
+    <tr>
+    {% for item in object_list %}
+        <td>
+            <a href="{{ item.get_absolute_url }}"><b>{{ item.name }}</b><br />
+            {% if item.photo_set.count %}
+                <img src="{{ item.photo_set.all.0.image.thumb_url }}" />
+
+            {% else %}
+                <span>No photos (yet)</span>
+            {% endif %}
+            </a>
+        </td>
+    {% endfor %}
+    </tr>
+</table>
+<p><a href="{% url 'item_list'  %}">查看相册列表 &raquo;</a></p>
+{% endblock %}

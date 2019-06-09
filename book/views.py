@@ -7,4 +7,4 @@ from .models import Book
 
 def index(request):
     books = Book.objects.all()
-    return render(request, "book.html", {'books': books})
+    return render(request, "book/book.html", {'books': books})

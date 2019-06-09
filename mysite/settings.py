@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'index',
     'resume',
     'memo',
-    'moive',
+    'movie',
     'book',
     'gallery'
 ]

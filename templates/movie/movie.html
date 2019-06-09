@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>电影</title>
+</head>
+<body>
+<div class="ui grid">
+    {% for item in videos %}
+        <td>
+            {% if item.picture %}
+                <img src="{{ item.picture.thumb_url }}" height="128px" width="128px" />
+            {% else %}
+                <span>No photos (yet)</span>
+            {% endif %}
+            </a>
+        </td>
+            <div class="content">
+                <a class="header">简介：{{ item.context }}</a>
+                <div class="meta">
+                    <span class="date">发布于：{{ item.time|date:'Y-M-D'}}</span>
+                </div>
+                <div class="description">
+                    电影名：{{ item.name}}
+                </div>
+            <a href="/movie/play/">点击播放</a>
+    </div>
+        <hr/>
+    {% empty %}
+    <h3>暂无数据</h3>
+    {% endfor %}
+</div>
+</body>
+</html>

@@ -20,7 +20,7 @@ def my_resume(request):
         page = 1
     p = Paginator(all_message, 10)
     message = p.page(page)
-    return render(request, 'resume.html', {'all_message': message})
+    return render(request, 'resume/resume.html', {'all_message': message})
 
 def download_resuem(request):
     file = open(settings.BASE_DIR + '/resume.docx', 'rb')
@@ -55,10 +55,10 @@ def save_message(request):
     return HttpResponseRedirect('/resume/')
 
 def qq(request):
-    return render(request, 'qq.html')
+    return render(request, 'resume/qq.html')
 
 def wechat(request):
-    return render(request, 'wechat.html')
+    return render(request, 'resume/wechat.html')
 
 
 

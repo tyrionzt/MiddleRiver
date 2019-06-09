@@ -27,7 +27,7 @@ urlpatterns = [
 
     url(r'^memo/', include('memo.urls')),
 
-    url(r'^moive/', include('moive.urls')),
+    url(r'^movie/', include('movie.urls')),
 
     url(r'^book/', include('book.urls')),
 

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="file" id="file" onchange="onInputFileChange()">
+<video id="video_id" controls="controls">您的浏览器不支持 video 标签。</video>
+<script>
+function onInputFileChange() {
+   var file = document.getElementById('file').files[0];
+   var url = URL.createObjectURL(file);
+   console.log(url);
+   document.getElementById("video_id").src = url;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>主页</title>
+    <!-- CSS -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/blog.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item active" href="">首页</a>
+          <a class="blog-nav-item" href="#part1">ME</a>
+          <a class="blog-nav-item" href="#part2">相册</a>
+          <a class="blog-nav-item" href="#part3">生活娱乐</a>
+        </nav>
+      </div>
+    </div>
+	<div class="intr">
+    	<span class="avtar"></span>
+        <p class="peointr">你好，我叫张涛，在中国和我同名同姓的超过50万，但我仍然是一个与众不同的个体</p>
+        <p class="peointr">执着，善良，乐观，踏实 </p>
+    </div>
+    <div class="title" id="part1">个人简历</div>
+    <div class="content">
+    	<div class="pic pic1">
+    		<img src="{% static 'image/h1.jpg' %}" alt="">
+    		<p>学历 --  本科</p>
+    	</div>
+    	<div class="pic pic2">
+    		<img src="{% static 'image/h2.jpg' %}" alt="">
+    		<p>技能 -- Python开发</p>
+    	</div>
+    	<div class="pic pic3">
+    		<img src="{% static 'image/h3.jpg' %}" alt="">
+    		<p>经验 -- 两年</p>
+    	</div>
+    </div>
+    <div class="text" style=" text-align:center;"><button onclick="window.open('/resume/')">更多</button></div>
+    <div class="tlinks">Collect from <a href="http://www.cssmoban.com/" >网页模板</a></div>
+    <div class="title" id="part2">相册</div>
+    <div class="content">
+    	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                  <a href="/gallery"><img src="{% static 'image/s1.jpg' %}" alt="..."></a>
+                </div>
+                <div class="item">
+                  <a href="/gallery"><img src="{% static 'image/s2.jpg' %}" alt="..."></a>
+                </div>
+				<div class="item">
+                    <a href="/gallery"><img src="{% static 'image/s3.jpg' %}" alt="..."></a>
+                </div>
+              </div>
+              <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+    </div>
+	<div class="title" id="part3">生活娱乐</div>
+    <div class="content">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="active"><a href="#home" role="tab" data-toggle="tab">备忘录</a></li>
+          <li><a href="#profile" role="tab" data-toggle="tab">影视推荐</a></li>
+          <li><a href="#messages" role="tab" data-toggle="tab">书架</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="home">
+          	<p class="text">你就像那紫色的郁金香，我该灌以怎样的水才能让你芬芳</p>
+            <p class="text">人和树是一样的，越是向往阳光，他的根就愈要伸向阴暗的地底</p>
+            <p class="text">Sometimes I miss you so much, but I cannot say</p>
+              <button onclick="window.open('/memo/')">更多</button>
+          </div>
+          <div class="tab-pane" id="profile">
+          	<p class="text"><button style="background-color: transparent; color: #0a0a0a" onclick="window.open('https://baike.baidu.com/item/%E8%82%96%E7%94%B3%E5%85%8B%E7%9A%84%E6%95%91%E8%B5%8E/30307?fr=aladdin')">肖申克的救赎</button>, 人生必看之经典  --豆瓣评分9.6</p>
+            <p class="text"><button style="background-color: transparent; color: #0a0a0a" onclick="window.open('https://baike.baidu.com/item/%E7%96%AF%E7%8B%82%E5%8A%A8%E7%89%A9%E5%9F%8E/18869840?fr=aladdin')">疯狂动物城</button>, 搞笑的情节折射出许多人生哲理  --豆瓣评分9.2</p>
+            <p class="text"><button style="background-color: transparent; color: #0a0a0a" onclick="window.open('https://baike.baidu.com/item/%E6%88%91%E4%B8%8D%E6%98%AF%E8%8D%AF%E7%A5%9E/22485219?fr=aladdin')">我不是药神</button>,国产神剧，我觉得9.0的评分过低了  --豆瓣评分9.0</p>
+              <button onclick="window.open('/movie/')">更多</button>
+          </div>
+          <div class="tab-pane" id="messages">
+          	<p class="text">Python编程 --让我从小白快速入门的简单易懂的Python学习书籍，强烈推荐</p>
+            <p class="text">三体  --科幻体裁小说，人类的文明在黑暗森林中显得那么渺小（PS我真的觉得刘慈欣的设想好真实）</p>
+              <button onclick="window.open('/book/')">更多</button>
+          </div>
+        </div>
+    </div>
+    <div class="blog-footer">
+{#      <p>More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>.</p>#}
+        <p>我的地盘我做主~</p>
+    </div>
+    <a href="" class="btt">顶部</a>
+    <!-- Js-->
+    <script src="{% static 'js/jquery-1.9.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/plugin.js' %}"></script>
+  </body>
+</html>
